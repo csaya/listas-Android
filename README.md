@@ -1,6 +1,9 @@
-# 🧠 Problema de Actualización en Listas - Jetpack Compose
+#Integrantes:
+>Cristian Raul Saya Vargas
+>Cristian Roberto Salhua Apfata
+# Problema de Actualización en Listas - Jetpack Compose
 
-## 🔴 Problema en el Código del Profesor
+## Problema en el Código del Profesor
 
 El código original presentaba un error:  
 > Al modificar un elemento en la lista, **los cambios no se reflejaban inmediatamente en la interfaz**.  
@@ -8,7 +11,7 @@ El código original presentaba un error:
 
 ---
 
-### 📄 Código del Profesor (con problema)
+### Código del Profesor (con problema)
 
 ```kotlin
 var curses = ArrayList<Curse>() // Lista normal, sin estado reactivo
@@ -22,7 +25,7 @@ fun modificarCurso() {
 
 ---
 
-### ❌ ¿Por qué no funcionaba?
+### ¿Por qué no funcionaba?
 
 - **Sin `mutableStateOf`** → La lista no era observable por Jetpack Compose.  
 - **Modificación directa** → Se cambiaba el contenido sin crear una nueva instancia.  
@@ -30,13 +33,13 @@ fun modificarCurso() {
 
 ---
 
-## ✅ Solución: Código Corregido
+## Solución: Código Corregido
 
 En mi versión, la lista se maneja con **estado reactivo**, permitiendo que Compose actualice la interfaz automáticamente.
 
 ---
 
-### 📄 Código Corregido
+### Código Corregido
 
 ```kotlin
 var listaItems by remember { mutableStateOf(listOf<Item>()) } // ← Estado reactivo
@@ -54,7 +57,7 @@ fun modificarItem() {
 
 ---
 
-### 💡 ¿Por qué sí funciona?
+### ¿Por qué sí funciona?
 
 ✅ **Usa `mutableStateOf`** → Compose detecta automáticamente los cambios.  
 ✅ **Crea una nueva lista** → Se notifica a la UI que el estado ha cambiado.  
@@ -62,7 +65,7 @@ fun modificarItem() {
 
 ---
 
-## 🔍 Diferencia en el Comportamiento de los Botones
+## Diferencia en el Comportamiento de los Botones
 
 ### Código del Profesor
 
@@ -102,7 +105,7 @@ Button(onClick = {
 
 ---
 
-## 📊 Comparación Técnica
+## Comparación Técnica
 
 | **Aspecto**              | **Código del Profesor**            | **Mi Código**                     |
 |---------------------------|-----------------------------------|-----------------------------------|
@@ -114,7 +117,7 @@ Button(onClick = {
 
 ---
 
-## 🎯 Conclusión
+## Conclusión
 
 La diferencia principal radica en el **manejo del estado**.
 
