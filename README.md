@@ -1,6 +1,7 @@
-#Integrantes:
-#Cristian Raul Saya Vargas
-#Cristian Roberto Salhua Apfata
+### Integrantes
+
+- **Cristian Raul Saya Vargas  
+- **Cristian Roberto Salhua Apfata
 # Problema de Actualización en Listas - Jetpack Compose
 
 ## Problema en el Código del Profesor
